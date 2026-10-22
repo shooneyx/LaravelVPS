@@ -13,8 +13,8 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@v1.2.5
         with:
-          host: 217.71.200.78
-          port: 2222
-          username: sheila
-          key: ${{secrets.SSH_PRIVATE_KEY}}
+          host: ${{ vars.SSH_HOST }}
+          port: ${{ vars.SSH_PORT }}
+          username: ${{ vars.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: "set -eu; cd /var/www/html/Laravel; git pull --ff-only origin main; npm ci; npm run build;"
