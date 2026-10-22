@@ -16,5 +16,5 @@ jobs:
           host: 217.71.200.78
           port: 2222
           username: sheila
-          key: ${{VPS_SSH_KEY}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
           script: "set -eu; cd /var/www/html/Laravel; git pull --ff-only origin main; npm ci; npm run build;"
