@@ -17,4 +17,4 @@ jobs:
           port: ${{ vars.SSH_PORT }}
           username: ${{ vars.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: "set -eu; cd /var/www/html/Laravel; git pull --ff-only origin main; npm ci; npm run build;"
+          script: "set -eu; cd /var/www/html/Laravel; git pull --ff-only origin master; npm ci; npm run build;"
